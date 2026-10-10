@@ -1,0 +1,43 @@
+/* Leave room for the compact sticky header without stacking large anchor gaps. */
+html{scroll-padding-top:64px}
+#demo{padding-top:28px;scroll-margin-top:0}
+/* Readable labels and centered artwork without extra micro-headings. */
+#demo .role-tabs button{font-size:16px;padding:10px 12px}
+#demo .demo-toolbar .asymmetry-tabs button{font-size:15px;padding:10px 14px}
+#demo .demo-label{font-size:12px;letter-spacing:.02em}
+#demo .demo-explanation{padding:26px 32px}
+#demo .demo-explanation h3{font-size:32px;line-height:1.2;margin:0 0 18px}
+#demo #role-description{font-size:18px;line-height:1.65;color:#44443c}
+#demo #explanation-panel{height:auto;min-height:0;overflow:visible;max-width:560px}
+#demo .edge-label{font-size:20px;stroke-width:6px}
+#demo .map-node b{font-size:15px}
+#demo .board-top,#demo .wire{font-size:15px}
+#demo .wire span{font-size:13px}
+#demo .wire b{width:65px}
+#demo .manual{font-size:16px}
+#demo .manual th{font-size:13px}
+#demo .demo-caption{font-size:13px}
+#demo .comparison-intro .mini-label{font-size:13px;letter-spacing:.03em}
+#demo .comparison-intro p:not(.mini-label),#demo .comparison-label{font-size:16px}
+#demo .comparison-lift,#demo .comparison-row small,#demo .comparison-method{font-size:14px}
+@media(max-width:900px) and (min-width:681px){#demo .demo-explanation{padding:22px}#demo .demo-explanation h3{font-size:28px}#demo #role-description{font-size:17px}}
+@media(max-width:680px){#demo .demo-toolbar{flex-wrap:wrap;gap:10px}#demo .demo-toolbar .asymmetry-tabs{width:100%;margin:0}#demo .demo-toolbar .asymmetry-tabs button{font-size:14px;padding:10px 8px}#demo .role-tabs button{font-size:15px}#demo .demo-explanation{padding:22px}#demo #explanation-panel{height:230px;overflow:auto}#demo .demo-explanation h3{font-size:28px}#demo #role-description{font-size:17px}#demo .map-node b{font-size:13px}#demo .edge-label{font-size:21px}#demo .comparison-label{font-size:15px}}
+/* Compact evidence directly below the asymmetry walkthrough. */
+#demo .section-heading{margin-bottom:26px}
+.demo-caption{font-size:11px;color:var(--muted);margin:10px 0 0}
+.qwen-comparison{display:grid;grid-template-columns:1fr 1.25fr;gap:20px 44px;padding:26px 0 0;margin-top:26px;border-top:1px solid var(--line)}
+.comparison-intro .mini-label{margin:0 0 12px}
+.comparison-intro h3{font-size:clamp(28px,3vw,38px);line-height:1.15;letter-spacing:-.035em;margin:0 0 16px;color:#242421}
+.comparison-intro p:not(.mini-label){font-size:13px;margin:0 0 13px;color:var(--muted)}
+.comparison-lift{display:inline-block;background:#f7e6a1;padding:5px 9px;font-size:12px;font-weight:650}
+.comparison-results{min-width:0;display:grid;gap:20px}
+.comparison-label{display:flex;align-items:baseline;justify-content:space-between;gap:14px;font-size:13px;line-height:1.35}
+.comparison-label strong{font-size:28px;line-height:1;letter-spacing:-.04em;white-space:nowrap}
+.comparison-track{height:12px;background:#e7e4d9;margin:10px 0 6px}
+.comparison-track>span{display:block;height:100%;background:#34362e}
+.comparison-track .open-channel{background:#d3ab21}
+.comparison-row small{font-size:11px;color:var(--muted)}
+.comparison-method{grid-column:1/-1;font-size:12px;color:var(--muted)}
+.comparison-method summary{cursor:pointer;width:fit-content}
+.comparison-method p{max-width:950px;margin:12px 0 0}
+@media(max-width:680px){.qwen-comparison{grid-template-columns:1fr;gap:22px;margin-top:20px;padding-top:22px}.comparison-intro h3{font-size:28px}.comparison-label{font-size:12px}.comparison-label strong{font-size:26px}}

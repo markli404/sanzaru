@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A benchmark for AI teamwork. Three language-model agents must defuse a simulated bomb with different information, communication limits, and abilities.">
+  <meta name="theme-color" content="#fff9e9">
+  <meta property="og:title" content="SANZARU ;  Cooperation under Asymmetry">
+  <meta property="og:description" content="Three AI agents. One bomb. Can they work together when no one can solve the task alone?">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://markli404.github.io/sanzaru-website/assets/sanzaru_overview.png">
+  <title>SANZARU ;  Can AI agents work together?</title>
+  <link rel="icon" href="assets/sanzaru-icon.png" type="image/png">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="editorial.css">
+<link rel="stylesheet" href="motion.css?v=hero-align-1">
+  <link rel="stylesheet" href="comparison.css">
+  <link rel="stylesheet" href="analysis.css?v=hero-type-2">
+  <link rel="stylesheet" href="failures.css">
+  <link rel="stylesheet" href="examples.css?v=click-scroll-1">
+  <script src="examples.js?v=click-scroll-1" defer></script>
+  <script src="triangle.js" defer></script>
+<script src="app.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header"><nav class="nav wrap" aria-label="Primary navigation">
+<a class="brand" href="#top" aria-label="SANZARU home"><img class="brand-icon" src="assets/sanzaru-icon.png" alt="">SANZARU <small>RESEARCH / 2026</small></a>
+<button class="menu-toggle" aria-expanded="false" aria-controls="nav-links">Menu <span aria-hidden="true">☰</span></button>
+<div id="nav-links" class="nav-links"><a href="#demo">The task</a><a href="#first-episode">An example</a><a href="#results">Results</a><a href="#failures">Failure modes</a><a href="#perspective">Perspective taking</a><a href="#examples">Real episodes</a><a class="nav-code" href="https://github.com/markli404/sanzaru-benchmark">Code ↗</a></div>
+</nav></header>
+<main id="main">
+<section class="hero wrap" id="top">
+<div class="monkey-wall" id="monkey-wall" aria-hidden="true"></div>
+<button class="motion-toggle" id="motion-toggle" aria-pressed="false" aria-label="Pause background animation">Pause motion</button>
+<div class="hero-copy"><img class="hero-icon" src="assets/sanzaru-icon.png" alt="SANZARU: three monkeys cooperating to defuse a bomb"><p class="eyebrow">SANZARU / A BENCHMARK FOR AI TEAMWORK</p><h1><em class="hero-lead">Can three AI agents defuse a bomb together</em><br><strong class="hero-focus">with limited perception?</strong></h1><p class="hero-roles"><span><span class="role-face" role="img" aria-label="Deaf">🙉</span> <span class="role-sentence"><b>Deaf</b> sees the bomb</span></span><span><span class="role-face" role="img" aria-label="Mute">🙊</span> <span class="role-sentence"><b>Mute</b> reads the manual</span></span><span><span class="role-face" role="img" aria-label="Blind">🙈</span> <span class="role-sentence"><b>Blind</b> cuts the wires</span></span></p><div class="hero-actions"><a class="button primary" href="assets/sanzaru-preprint.pdf">Paper ↗</a><a class="button" href="https://github.com/markli404/sanzaru-benchmark">Code ↗</a><a class="game-link" href="https://store.steampowered.com/app/4656000/BOMBANANA/" target="_blank" rel="noopener">Inspired by BOMBANANA! ↗</a></div><p class="authors"><a href="https://yipingli.dev" target="_blank" rel="noopener">Yiping Li</a> · <a href="https://ryeii.github.io/" target="_blank" rel="noopener">Zhiyu An</a> · <a href="https://sites.ucmerced.edu/wdu" target="_blank" rel="noopener">Wan Du</a> <span>UC Merced</span></p></div>
+</section>
+<section class="section wrap" id="demo">
+  <div class="section-heading"><p class="eyebrow">01 / Two asymmetries</p><h2>No one can defuse it alone.</h2></div>
+  <div class="demo-shell">
+    <div class="demo-toolbar"><span class="demo-label"><span class="status-dot"></span> TASK / BASE-1#2</span><div class="asymmetry-tabs" role="tablist" aria-label="Asymmetry explanation"><button role="tab" id="tab-information" data-asymmetry="information" aria-selected="true" aria-controls="explanation-panel">Information asymmetry</button><button role="tab" id="tab-communication" data-asymmetry="communication" aria-selected="false" aria-controls="explanation-panel" tabindex="-1">Communication asymmetry</button></div></div>
+    <div class="demo-grid"><div class="perspectives"><div class="role-tabs" role="tablist" aria-label="Agent perspective"><button role="tab" id="tab-deaf" aria-controls="role-panel" aria-selected="true" data-role="deaf">🙉 Deaf</button><button role="tab" id="tab-mute" aria-controls="role-panel" aria-selected="false" tabindex="-1" data-role="mute">🙊 Mute</button><button role="tab" id="tab-blind" aria-controls="role-panel" aria-selected="false" tabindex="-1" data-role="blind">🙈 Blind</button></div><div id="role-panel" role="tabpanel" aria-labelledby="tab-deaf" tabindex="0"><div id="view-content"><div class="board"><div class="board-top"><span>DISPLAY <b>0</b></span><span>LIGHT <i class="light green"></i> green</span></div><div class="wire yellow"><span>01</span><i></i><b>yellow</b></div><div class="wire green"><span>02</span><i></i><b>green</b></div><div class="wire red"><span>03</span><i></i><b>red</b></div></div></div></div></div><aside class="demo-explanation"><div id="explanation-panel" role="tabpanel" aria-labelledby="tab-information" tabindex="0"><h3 id="role-title">The board, but not the rule.</h3><p id="role-description">Deaf sees the light and wire colors and must share this information with Mute so it can consult the manual.</p></div></aside></div>
+  </div>
+
+
+</section>
+<section class="section wrap episode-example" id="first-episode" aria-labelledby="first-episode-title" data-episode-ids="first-bomb">
+  <div class="section-heading"><p class="eyebrow">02 / An example</p><h2 id="first-episode-title">One bomb, start to finish.</h2></div>
+  <div class="episode-shell" aria-busy="true">
+    <div class="episode-header"><div><h3 data-episode-model>Gemini-3.8-Flash · Thinking ON</h3><p data-episode-task>base-1#2 · run-1 · 3 rounds</p></div><span data-episode-outcome class="episode-outcome won">Defused</span></div>
+    <div class="episode-controls" role="group" aria-label="Conversation controls"><span class="episode-perspectives-label">Three perspectives</span></div>
+    <p class="episode-view-note" data-episode-note>All recorded messages and actions, in turn order.</p>
+    <div class="episode-transcript" tabindex="0" role="region" aria-label="Scrollable simple example conversation history">Loading conversation…</div>
+  </div>
+</section>
+<section class="section tinted" id="results"><div class="wrap"><div class="section-heading"><p class="eyebrow">03 / Results</p><h2>How well do models cooperate?</h2></div><div class="results-layout"><div class="leaderboard"><div class="chart-header"><h3>Team success</h3><span>216 episodes / model</span></div><div id="bars"></div></div></div>  <article class="qwen-comparison" id="qwen-comparison" aria-labelledby="qwen-title">
+    <div class="comparison-intro"><h3 id="qwen-title">What if we remove the communication asymmetry?</h3><p>Qwen3.8-27B · Thinking ON</p></div>
+    <div class="comparison-results">
+      <div class="comparison-row"><div class="comparison-label"><span>With communication asymmetry</span><strong>62.5%</strong></div><div class="comparison-track" aria-hidden="true"><span style="width:62.5%"></span></div></div>
+      <div class="comparison-row"><div class="comparison-label"><span>Without communication asymmetry</span><strong>82.4%</strong></div><div class="comparison-track" aria-hidden="true"><span class="open-channel" style="width:82.407407%"></span></div></div>
+    </div>
+  </article>
+</div></section>
+<section class="section wrap" id="failures" aria-labelledby="failure-title">
+  <div class="section-heading"><p class="eyebrow">04 / Failure modes</p><h2 id="failure-title">Why do the bombs explode?</h2><p class="failure-lead" id="failure-count-note">Centre numbers show the number of failed episodes.</p></div>
+  <figure class="failure-figure" aria-describedby="failure-count-note">
+    <div class="failure-grid">
+      <div class="failure-panel"><h3>Gemini-3.8-Flash</h3><p class="failure-config">Thinking ON</p><img src="assets/failures/gemini.svg" width="260" height="260" loading="lazy" alt="Gemini: 30 losses. Communication 30%, reasoning 60%, execution 10%."></div>
+      <div class="failure-panel"><h3>GLM-5.3-Flash</h3><p class="failure-config">Thinking ON</p><img src="assets/failures/glm.svg" width="260" height="260" loading="lazy" alt="GLM: 81 losses. Communication 38%, reasoning 23%, execution 38%."></div>
+      <div class="failure-panel"><h3>GPT-5.6-Terra</h3><p class="failure-config">Thinking ON</p><img src="assets/failures/terra.svg" width="260" height="260" loading="lazy" alt="Terra: 97 losses. Communication 46%, reasoning 52%, execution 2%."></div>
+      <div class="failure-panel"><h3>DeepSeek-V4.1-Flash</h3><p class="failure-config">Thinking OFF</p><img src="assets/failures/deepseek.svg" width="260" height="260" loading="lazy" alt="DeepSeek: 110 losses. Communication 54%, reasoning 29%, execution 17%."></div>
+      <div class="failure-panel"><h3>GPT-5.6-Luna</h3><p class="failure-config">Thinking ON</p><img src="assets/failures/luna.svg" width="260" height="260" loading="lazy" alt="Luna: 128 losses. Communication 62%, reasoning 27%, execution 11%."></div>
+      <div class="failure-panel"><h3>Claude-Sonnet-5</h3><p class="failure-config">Thinking OFF</p><img src="assets/failures/claude.svg" width="260" height="260" loading="lazy" alt="Claude: 153 losses. Communication 75%, reasoning 14%, execution 10%."></div>
+      <div class="failure-panel"><h3>Qwen-3.8-Flash</h3><p class="failure-config">Thinking OFF</p><img src="assets/failures/qwen.svg" width="260" height="260" loading="lazy" alt="Qwen: 172 losses. Communication 73%, reasoning 13%, execution 14%."></div>
+      <div class="failure-panel"><h3>All models</h3><p class="failure-config">Pooled losses</p><img src="assets/failures/all.svg" width="260" height="260" loading="lazy" alt="All models: 771 losses. Communication 60%, reasoning 26%, execution 14%."></div>
+    </div>
+    <div class="failure-key" aria-label="Failure mode legend">
+      <div><h3><i class="failure-swatch" style="--swatch:#4676b8" aria-hidden="true"></i>Communication</h3><ul class="communication-modes"><li><i class="failure-swatch" style="--swatch:#5f8dcc" aria-hidden="true"></i>No shared code</li><li><i class="failure-swatch" style="--swatch:#87abdc" aria-hidden="true"></i>Misalignment</li><li><i class="failure-swatch" style="--swatch:#b1c9e8" aria-hidden="true"></i>Omission</li><li><i class="failure-swatch" style="--swatch:#d8e5f3" aria-hidden="true"></i>Slow protocol</li></ul></div>
+      <div><h3><i class="failure-swatch" style="--swatch:#c96c70" aria-hidden="true"></i>Reasoning</h3><ul><li><i class="failure-swatch" style="--swatch:#e99b9c" aria-hidden="true"></i>Wrong answer</li><li><i class="failure-swatch" style="--swatch:#f4c9c6" aria-hidden="true"></i>Wrong round</li></ul></div>
+      <div><h3><i class="failure-swatch" style="--swatch:#27858d" aria-hidden="true"></i>Execution</h3><ul><li><i class="failure-swatch" style="--swatch:#67b9bf" aria-hidden="true"></i>Hesitation</li><li><i class="failure-swatch" style="--swatch:#b3dfe0" aria-hidden="true"></i>Impatience</li></ul></div>
+    </div>
+  </figure>
+</section>
+<section class="section tinted" id="perspective" aria-labelledby="perspective-title">
+  <div class="wrap">
+    <div class="section-heading"><p class="eyebrow">05 / Perspective taking</p><h2 id="perspective-title">Can agents take their teammates’ perspectives?</h2><p class="perspective-lead">The prompts explicitly state who can see, hear, speak, and act. Agents still make plans and send messages that ignore these limits.</p></div>
+    <div class="perspective-stats">
+      <article><div class="perspective-number">67<span>%</span></div><p class="perspective-denominator">of failed episodes <span>516 / 771</span></p><h3>Assuming abilities a teammate does not have.</h3><p>Naming a colour to Blind, or expecting Mute to speak.</p></article>
+      <article><div class="perspective-number">19<span>%</span></div><p class="perspective-denominator">of failed episodes <span>148 / 771</span></p><h3>Sending through a channel a teammate cannot receive.</h3><p>Speaking to Deaf, or gesturing to Blind.</p></article>
+    </div>
+  </div>
+</section>
+<section class="section wrap episode-example" id="examples" aria-labelledby="examples-title" data-episode-ids="shared-code,morse,slow,letter-grid,whole-manual">
+  <div class="section-heading"><p class="eyebrow">06 / Real episodes</p><h2 id="examples-title">Inside the conversation.</h2></div>
+  <div class="episode-tabs" role="tablist" aria-label="Recorded episodes">
+    <button id="example-0" data-example="0" role="tab" aria-selected="true" aria-controls="episode-panel"><span>EXAMPLE 01</span>A shared code</button>
+    <button id="example-1" data-example="1" role="tab" aria-selected="false" tabindex="-1" aria-controls="episode-panel"><span>EXAMPLE 02</span>Morse code</button>
+    <button id="example-2" data-example="2" role="tab" aria-selected="false" tabindex="-1" aria-controls="episode-panel"><span>EXAMPLE 03</span>One bit at a time</button>
+    <button id="example-3" data-example="3" role="tab" aria-selected="false" tabindex="-1" aria-controls="episode-panel"><span>EXAMPLE 04</span>A letter grid</button>
+    <button id="example-4" data-example="4" role="tab" aria-selected="false" tabindex="-1" aria-controls="episode-panel"><span>EXAMPLE 05</span>Sending the whole manual</button>
+  </div>
+  <div class="episode-shell" id="episode-panel" role="tabpanel" aria-labelledby="example-0" aria-busy="true">
+    <div class="episode-header"><div><h3 data-episode-model>Gemini-3.8-Flash · Thinking ON</h3><p data-episode-task>base-3#3 · run-3 · 4 rounds</p></div><span data-episode-outcome class="episode-outcome won">Defused</span></div>
+    <div class="episode-controls" role="group" aria-label="Conversation controls"><span class="episode-perspectives-label">Three perspectives</span></div>
+    <p class="episode-view-note" data-episode-note>All recorded messages and actions, in turn order.</p>
+    <div class="episode-transcript" tabindex="0" role="region" aria-label="Scrollable recorded conversation history">Loading conversation…</div>
+  </div>
+</section>
+</main>
+
+<div id="announcement" class="sr-only" role="status" aria-live="polite"></div>
+</body>
+</html>

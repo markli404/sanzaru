@@ -1,0 +1,59 @@
+/* Results first, with concise diagnostics and optional research detail. */
+.hero h1{max-width:1050px;margin-inline:auto;text-wrap:balance}
+.hero h1 .hero-lead{font-size:1em!important;white-space:normal!important;background:none;letter-spacing:-.045em}
+.hero h1 .hero-focus{font-family:inherit;font-style:normal;font-weight:750;font-size:.88em;letter-spacing:-.045em;background:linear-gradient(transparent 78%,#f4cf457a 78%,#f4cf457a 94%,transparent 94%)}
+.hero .hero-icon{width:64px;margin-bottom:16px}
+.hero-roles{display:grid;grid-template-columns:repeat(3,max-content);justify-content:center;gap:12px 26px;width:fit-content;max-width:100%;margin:30px auto 0;font-size:23px;line-height:1.45;color:#424238;text-align:left}
+.hero-roles>span{display:grid;grid-template-columns:34px auto;align-items:center;gap:10px;white-space:nowrap}
+.role-face{font-size:30px;line-height:1;display:grid;place-items:center;width:34px;height:34px}
+.role-sentence{display:block}
+@media(max-width:1000px){.hero-roles{grid-template-columns:max-content;gap:10px}}
+@media(max-width:680px){.hero h1{font-size:clamp(34px,9.2vw,48px);line-height:1.1;letter-spacing:-.045em}.hero-roles{font-size:20px;margin-top:25px}.hero .hero-icon{width:56px}.role-face{font-size:29px}}
+.game-link{transition:color .15s ease}
+.game-link:hover{color:#756321;text-decoration:underline;text-underline-offset:.12em;text-decoration-thickness:2px}
+#perspective{padding-block:40px 56px;scroll-margin-top:0}
+#perspective .section-heading{max-width:950px;margin-bottom:30px}
+#perspective .perspective-lead{font-size:19px;line-height:1.6;max-width:850px;margin:22px 0 0;color:#57574d}
+.perspective-stats{display:grid;grid-template-columns:1fr 1fr;gap:50px;max-width:1080px}
+.perspective-stats article{border-top:1px solid #bcbcb0;padding-top:20px}
+.perspective-number{font-size:76px;font-weight:650;letter-spacing:-.065em;line-height:1.1;color:#242421}
+.perspective-number>span{font-size:38px;margin-left:4px}
+.perspective-stats .perspective-denominator{font-size:15px;margin:8px 0 24px;color:#5b5b50}
+.perspective-denominator>span{margin-left:10px;font-variant-numeric:tabular-nums}
+.perspective-stats h3{font-size:25px;line-height:1.25;letter-spacing:-.025em;margin:0 0 12px;max-width:460px}
+.perspective-stats article>p:last-child{font-size:17px;line-height:1.6;color:#57574d;margin:0}
+@media(max-width:680px){#perspective{padding-block:28px 40px}#perspective .perspective-lead{font-size:17px}.perspective-stats{grid-template-columns:1fr;gap:28px}.perspective-number{font-size:64px}.perspective-stats h3{font-size:24px}.perspective-stats .perspective-denominator{margin-bottom:18px}}
+.authors a{text-decoration:underline;text-underline-offset:4px;text-decoration-color:#a29b80}
+.authors a:hover{text-decoration-color:currentColor;color:#242421}
+#results .results-layout{display:block;max-width:900px}
+#results .leaderboard{border:0;padding:0}
+#results .bar-label{font-size:17px}
+#results .thinking-badge{font-size:12px;padding:4px 7px}
+#results .bar-row{margin:24px 0}
+#results .chart-header span,#results .small{font-size:14px}
+#results .qwen-comparison{margin-top:38px;padding-top:30px}
+#results .comparison-intro p,#results .comparison-label{font-size:17px}
+#results .methodology{font-size:15px;margin:24px 0 0}
+.supplement{padding:20px 0;border-bottom:1px solid var(--line)}
+.supplement>summary{font-size:18px;font-weight:600;line-height:1.4}
+.supplement>p{font-size:16px;max-width:900px;margin:18px 0}
+.task-bank{margin-top:22px}
+.task-bank .families{margin-top:24px}
+.analysis-cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:30px}
+.analysis-cards article{border-top:3px solid #242421;padding-top:22px}
+.analysis-cards h3{font-size:27px;margin-bottom:15px}
+.analysis-cards p{font-size:18px;line-height:1.65}
+.analysis-cards ul{padding-left:20px;margin:20px 0 0;font-size:16px;line-height:1.9}
+.analysis-note{font-size:16px;max-width:960px;margin:32px 0 10px}
+.perspective-takeaway{padding:28px 0;margin-top:26px;border-top:1px solid var(--line)}
+.perspective-takeaway h3{font-size:27px;max-width:800px;margin-bottom:15px}
+.perspective-takeaway p{font-size:18px;max-width:900px}
+.flag-list{margin:20px 0}
+.flag-list>div{display:grid;grid-template-columns:210px 1fr;gap:20px;padding:15px 0;border-top:1px solid var(--line)}
+.flag-list dt{font-size:17px;font-weight:650}
+.flag-list dd{font-size:17px;margin:0;color:var(--muted)}
+#protocols .protocol-layout{margin:24px 0}
+#protocols .protocol-layout p{font-size:16px}
+#protocols .protocol-layout p.small{font-size:14px}
+.analysis-section .section-heading{max-width:960px}
+@media(max-width:680px){.analysis-cards{grid-template-columns:1fr;gap:26px}.analysis-cards h3,.perspective-takeaway h3{font-size:25px}.analysis-cards p,.perspective-takeaway p{font-size:17px}.flag-list>div{grid-template-columns:1fr;gap:6px}.supplement>summary{font-size:17px}#results .bar-label{font-size:15px}#results .thinking-badge{font-size:11px}#results .comparison-label{font-size:15px}}
