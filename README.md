@@ -2,7 +2,7 @@
 
 Research website for [SANZARU](https://github.com/markli404/sanzaru-benchmark).
 
-Live site: https://yipingli.dev/sanzaru-website/
+Live site: https://yipingli.dev/sanzaru/
 
 This repository contains the standalone static website, figures, and selected released episode traces. It requires no build step. GitHub Pages publishes the root of the `main` branch.
 
