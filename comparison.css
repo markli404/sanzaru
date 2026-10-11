@@ -1,5 +1,6 @@
 /* Leave room for the compact sticky header without stacking large anchor gaps. */
-html{scroll-padding-top:64px}
+html{scroll-padding-top:56px}
+main .section[id]{scroll-margin-top:0}
 #demo{padding-top:28px;scroll-margin-top:0}
 /* Readable labels and centered artwork without extra micro-headings. */
 #demo .role-tabs button{font-size:16px;padding:10px 12px}
